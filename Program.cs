@@ -12,6 +12,20 @@
 // РЕШЕНИЕ
 
 string[] oneArray = {"hello", "2", "world", ":-)"};
+string[] twoArray = new string[oneArray.Length];
+void SecondArray(string[] oneArray, string[] twoArray)
+{
+    int count = 0;
+    for (int i = 0; i < oneArray.Length; i++)
+    {
+        if (oneArray[i].Length <= 3)
+        {
+            twoArray[count] = oneArray[i];
+            count++;
+        }
+    }
+}
+
 
 void PrintArray(string[] array)
 {
@@ -23,3 +37,7 @@ void PrintArray(string[] array)
 }
 Console.WriteLine("Массив строк, заданный на старте выполнения алгоритма");
 PrintArray(oneArray);
+Console.WriteLine();
+Console.WriteLine("Полученный массив строк, состоящий из трех элеметов в  заданном массиве строк");
+SecondArray(oneArray, twoArray);
+PrintArray(twoArray);
